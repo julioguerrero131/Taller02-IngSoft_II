@@ -12,8 +12,6 @@ class itemz:
 
         self.env_fee = 0
 
-
-
     def getTotal(self):
 
         return self.price * self.qty
@@ -22,9 +20,8 @@ class itemz:
 
         return self.price * self.qty * 0.6
 
+# class to shop
 
-
-#class to shop
 
 class shoppinCart:
 
@@ -42,19 +39,15 @@ class shoppinCart:
 
         self.currency = "USD"
 
-
-
     def addItem(self, item):
 
-#discount added here
+        # discount added here
 
         self.items.append(item)
 
-
-
     def calculateSubtotal(self):
 
-#todo: fix this in the future i guess
+        # todo: fix this in the future i guess
 
         subtotal = 0
 
@@ -63,8 +56,6 @@ class shoppinCart:
             subtotal += item.getTotal()
 
         return subtotal
-
-
 
     def applyDiscounts(self, subtotal, isMember, hasCoupon):
 
@@ -78,11 +69,9 @@ class shoppinCart:
 
         return subtotal
 
-
-
     def calculateTotal(self, isMember, hasCoupon):
 
-#why i need this? @user
+        # why i need this? @user
 
         subtotal = self.calculateSubtotal()
 
@@ -95,7 +84,6 @@ class shoppinCart:
             total = total - (total * self.couponDiscount)
 
         return total
-
 
 
 def main():
@@ -120,11 +108,7 @@ def main():
 
     hasCoupon = "YES"
 
-
-
     total = cart.calculateTotal(isMember, hasCoupon)
-
-
 
     if total < 0:
 
@@ -133,7 +117,6 @@ def main():
     else:
 
         print("The total price is: $" + str(int(total)))
-
 
 
 if __name__ == "__main__":
